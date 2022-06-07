@@ -93,6 +93,9 @@ EC2에 compose 명령어를 쓰는 것은 비효율적이라 판단.
       
       3. EKS는 기본적으로 amazon-vpc-cni-k8s 을 지원. amazon-vpc-cni-k8s 플러그인은 VPC 상에서 유효한 실제 IP를 Pod에 할당
       
+      4. EKS를 사용시 다른 kubenetes를 지원하는 클라우드서비스로 마이그레이션이 용이하기 때문에 aws에 의존도가 낮아짐
+      
+      5. kubectl을 사용 할 수 있고 ecs에 비해 다수의 컨테이너를 관리하기에 좀 더 유리한면이 있음.
 ### EKS를 구성하면서 고려해야 했던 점
 
       1. RBAC(역할 기반 액세스 제어) 설정
