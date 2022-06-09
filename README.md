@@ -27,11 +27,12 @@
 ## 요구사항 (Dev)
 Dev환경에서 EC2를 이용하여 ssh 접속 후, docker-compose up 명령어를 통해 직접 올리고자함. (디버깅을 하기위해 EC2를 씀)
 
+## 구성한 DEV 아키텍처
 ![스크린샷, 2022-06-04 16-34-40](https://user-images.githubusercontent.com/50416571/172083815-ae6b97b5-b862-46fe-aab1-9c412c2d9cc0.png)
 
 
 ### 판단 
-EC2에 compose 명령어를 쓰는 것은 비효율적이라 판단.
+EC2에 compose 명령어를 쓰는 것보다 ecs에 클러스터를 ec2를 사용함으로써 개발자들의 요구사항을 충족시켜주고 좀 더 편리한 환경 
 
 ### 이유
       1. EC2가 갑자기 down되면 깡통 EC2에 docker를 다시 설치해야해서 실행 시간이 걸린다.
@@ -83,6 +84,7 @@ EC2에 compose 명령어를 쓰는 것은 비효율적이라 판단.
       1. staging, proudction 환경은 쿠버네티스로 구성할 것. 
       2. staging에서 proudction으로 갈 때는 release를 통해 이루어질것.
 
+## 구성한 Staging/Production 아키텍처
 ![스크린샷, 2022-06-04 16-34-37](https://user-images.githubusercontent.com/50416571/172083825-fc260538-9d58-4812-82d1-2e5c37cef433.png)
 
 ### EKS 사용이유
@@ -113,7 +115,6 @@ EC2에 compose 명령어를 쓰는 것은 비효율적이라 판단.
 - eks vs ec2 사용비교
 automatically.https://ikcoo.tistory.com/147
 https://aws.amazon.com/ko/eks/faqs/#:~:text=Q%3A%20Amazon%20EKS%20%EC%B6%94%EA%B0%80%20%EA%B8%B0%EB%8A%A5%EC%9D%84%20%EC%82%AC%EC%9A%A9%ED%95%B4%EC%95%BC%20%ED%95%98%EB%8A%94%20%EC%9D%B4%EC%9C%A0%EB%8A%94,%ED%95%98%EA%B3%A0%20%EA%B4%80%EB%A6%AC%ED%95%A0%20%EC%88%98%20%EC%9E%88%EC%8A%B5%EB%8B%88%EB%8B%A4.
-- Terraforming
-https://github.com/dtan4/terraforming
+
 - GitOps
 https://www.samsungsds.com/kr/insights/gitops.html
